@@ -1,5 +1,3 @@
-Here is the updated `README.md` that includes the Accountant role and their specific responsibilities based on the assignment guidelines.
-
 # DeskHive Hub - Shared Workspace & Meeting Room Booking System
 
 DeskHive Hub is a command-line Python application designed to manage hot desks and meeting rooms for freelancers and small teams. This system handles space availability, user registrations, bookings, payments, and facility maintenance using text-based file storage.
@@ -16,7 +14,7 @@ DeskHive Hub is a command-line Python application designed to manage hot desks a
 
 The system supports distinct functionalities based on the logged-in role:
 
-* **Hub Administrator:** Add, update, and remove desks and meeting rooms; view all system data; generate overall revenue and space utilization reports.
+* **Hub Administrator:** Add, update, and remove desks and meeting rooms; view all system data; generate overall revenue and space utilisation reports.
 
 
 * **Booking Coordinator:** Register new users, process daily and hourly bookings, manage cancellations, and view booking histories.
