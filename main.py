@@ -48,3 +48,6 @@ def main_menu():
             
         elif role_choice == "0":
             break
+
+if __name__ == "__main__":
+    main_menu()
