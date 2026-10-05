@@ -1,0 +1,17 @@
+2026-10-05 21:11:05 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.
+2026-10-05 21:12:26 | Role: Hub Administrator    | Action: ADD_SPACE              | Details: Created space DS003
+2026-10-05 21:12:56 | Role: Hub Administrator    | Action: UPDATE_SPACE           | Details: Updated space DS003
+2026-10-05 21:14:40 | Role: Booking Coordinator  | Action: REGISTER_USER          | Details: U002
+2026-10-05 21:15:14 | Role: Booking Coordinator  | Action: NEW_BOOKING            | Details: B0001 for U001
+2026-10-05 21:18:20 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.
+2026-10-05 21:19:37 | Role: Hub Administrator    | Action: ADD_SPACE              | Details: Created space DS003
+2026-10-05 21:20:27 | Role: Facilities Staff     | Action: LOG_MAINTENANCE        | Details: MT0001
+2026-10-05 21:20:40 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.
+2026-10-05 21:21:17 | Role: Hub Administrator    | Action: UPDATE_SPACE           | Details: Updated space DS001
+2026-10-05 21:22:28 | Role: Facilities Staff     | Action: LOG_MAINTENANCE        | Details: MT0002
+2026-10-05 21:23:22 | Role: Booking Coordinator  | Action: NEW_BOOKING            | Details: B0002 for U002
+2026-10-05 21:23:44 | Role: Booking Coordinator  | Action: NEW_BOOKING            | Details: B0003 for U002
+2026-10-05 21:24:50 | Role: Booking Coordinator  | Action: NEW_BOOKING            | Details: B0004 for U002
+2026-10-05 21:25:46 | Role: Booking Coordinator  | Action: NEW_BOOKING            | Details: B0005 for U002
+2026-10-05 21:26:41 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.
+2026-10-05 21:32:36 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.

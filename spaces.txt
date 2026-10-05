@@ -1,0 +1,4 @@
+DS001,Quiet Hot Desk A1,Desk,1,1,5.00,35.00,Maintenance
+DS002,Window Hot Desk B2,Desk,1,1,6.00,40.00,Available
+RM001,Executive Conference Room,Room,2,10,30.00,200.00,Available
+DS003,Quiet Desk C2,Desk,5,1,5.00,40.00,Disabled
