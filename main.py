@@ -4,6 +4,7 @@ import admin
 import coordinator
 import member
 import facilities
+import accountant
 
 def main_menu():
     initialize_default_files()
@@ -12,8 +13,8 @@ def main_menu():
         print("\n" + LINE)
         print("WELCOME TO DESKHIVE HUB BOOKING & MANAGEMENT SYSTEM".center(80))
         print(LINE)
-        print("  1. Hub Administrator\n  2. Booking Coordinator\n  3. User / Member\n  4. Facilities Staff\n  0. Exit")
-        role_choice = input("Enter option (0-4): ").strip()
+        print("  1. Hub Administrator\n  2. Booking Coordinator\n  3. User / Member\n  4. Facilities Staff\n  5. Accountant\n  0. Exit")
+        role_choice = input("Enter option (0-5): ").strip()
 
         if role_choice == "1":
             if input("Enter Admin Password: ").strip() == "admin123":
@@ -38,8 +39,12 @@ def main_menu():
         elif role_choice == "4":
             facilities.facilities_staff_menu()
             
+        elif role_choice == "5":
+            if input("Enter Accountant Password: ").strip() == "acc123":
+                write_log("Accountant", "LOGIN", "Logged in.")
+                accountant.accountant_menu()
+            else:
+                print("  [Access Denied]")
+            
         elif role_choice == "0":
             break
-
-if __name__ == "__main__":
-    main_menu()
