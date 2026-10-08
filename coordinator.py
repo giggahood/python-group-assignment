@@ -108,3 +108,4 @@ def booking_coordinator_menu():
         elif choice == "2": bc_make_booking()
         elif choice == "3": admin_view_all_data_menu()
         elif choice == "0": break
+        else: print("  [Error] Invalid choice. Please enter 0, 1, 2, or 3.")

@@ -171,16 +171,66 @@ def admin_view_audit_logs():
     else:
         print("  No logs found.")
 
+def admin_view_space_utilisation():
+    print("\n" + LINE)
+    print("SPACE UTILISATION & DEMAND TRACKING".center(80))
+    print(LINE)
+    
+    spaces = read_records(SPACES_FILE, SPACE_FIELDS)
+    bookings = read_records(BOOKINGS_FILE, BOOKING_FIELDS)
+    
+    if not spaces:
+        print("  No spaces found in the system.")
+        return
+        
+    usage_data = {s[S_ID]: {"name": s[S_NAME], "type": s[S_TYPE], "hours": 0} for s in spaces}
+    
+    for b in bookings:
+        if b[B_STATUS] != "Cancelled": 
+            s_id = b[B_SPACE]
+            if s_id in usage_data:
+                if b[B_TYPE] == "Daily":
+                    # Daily bookings cover opening to closing (14 hours)
+                    usage_data[s_id]["hours"] += (CLOSING_HOUR - OPENING_HOUR) 
+                else:
+                    # Hourly bookings add their specific duration
+                    usage_data[s_id]["hours"] += int(b[B_HOURS])
+    
+    sorted_usage = sorted(usage_data.items(), key=lambda x: x[1]["hours"], reverse=True)
+    
+    print(f"{'Space ID':<10} | {'Name':<25} | {'Type':<10} | {'Total Hours Booked':<15}")
+    print(DASH)
+    for s_id, data in sorted_usage:
+        print(f"{s_id:<10} | {data['name']:<25} | {data['type']:<10} | {data['hours']} hr(s)")
+    print(DASH)
+    
+    if len(sorted_usage) >= 2:
+        top_space = sorted_usage[0]
+        bottom_space = sorted_usage[-1]
+        
+        print("\n📈 HIGH DEMAND SPACE:")
+        if top_space[1]["hours"] > 0:
+            print(f"   {top_space[1]['name']} ({top_space[0]}) is your most popular asset with {top_space[1]['hours']} total hours booked.")
+        else:
+            print("   Not enough booking data to determine high demand.")
+            
+        print("\n📉 LOW DEMAND SPACE:")
+        print(f"   {bottom_space[1]['name']} ({bottom_space[0]}) is underutilized with only {bottom_space[1]['hours']} total hours booked.")
+    print(LINE + "\n")
+
 def hub_administrator_menu():
     while True:
         print("\n" + LINE)
         print("DESKHIVE HUB - HUB ADMINISTRATOR MENU".center(80))
         print(LINE)
-        print("  1. Manage Desks & Rooms\n  2. View All System Data\n  3. Generate Report\n  4. View Logs\n  0. Logout")
-        choice = input("Enter choice (0-4): ").strip()
+        # Added Option 4 and shifted logs to Option 5
+        print("  1. Manage Desks & Rooms\n  2. View All System Data\n  3. Generate Report\n  4. Space Utilisation & Demand\n  5. View Logs\n  0. Logout")
+        choice = input("Enter choice (0-5): ").strip()
 
         if choice == "1": admin_manage_spaces_menu()
         elif choice == "2": admin_view_all_data_menu()
         elif choice == "3": admin_generate_overall_report()
-        elif choice == "4": admin_view_audit_logs()
+        elif choice == "4": admin_view_space_utilisation() # Calls new function
+        elif choice == "5": admin_view_audit_logs()
         elif choice == "0": break
+        else: print("  [Error] Invalid choice. Please enter a number between 0 and 5.")

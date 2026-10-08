@@ -48,6 +48,10 @@ def main_menu():
             
         elif role_choice == "0":
             break
+        elif role_choice == "0":
+            break
+        else:
+            print("  [Error] Invalid option. Please enter a number between 0 and 5.")
 
 if __name__ == "__main__":
     main_menu()

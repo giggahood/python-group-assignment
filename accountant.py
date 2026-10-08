@@ -110,3 +110,5 @@ def accountant_menu():
             acc_generate_monthly_summary()
         elif choice == "0":
             break
+        else: 
+            print("  [Error] Invalid choice. Please enter 0, 1, 2, or 3.")

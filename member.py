@@ -135,3 +135,5 @@ def user_member_menu(user_id):
             user_view_history(user_id)
         elif choice == "0": 
             break
+        else:
+            print("  [Error] Invalid choice. Please enter a number between 0 and 4.")
