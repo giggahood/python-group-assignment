@@ -19,3 +19,12 @@
 2026-10-05 23:26:05 | Role: Accountant           | Action: UPDATE_PAYMENT         | Details: Set P0001 to Paid
 2026-10-08 09:35:01 | Role: User/Member          | Action: EXTEND_BOOKING         | Details: B0005 extended by 10h
 2026-10-08 09:35:15 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.
+2026-10-08 13:56:42 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.
+2026-10-08 13:57:11 | Role: Hub Administrator    | Action: ADD_SPACE              | Details: Created space DS004
+2026-10-08 13:57:46 | Role: Hub Administrator    | Action: UPDATE_SPACE           | Details: Updated space DS001
+2026-10-08 13:58:45 | Role: Booking Coordinator  | Action: REGISTER_USER          | Details: U003
+2026-10-08 14:00:27 | Role: User/Member          | Action: EXTEND_BOOKING         | Details: B0005 extended by 1h
+2026-10-08 14:00:56 | Role: Facilities Staff     | Action: LOG_MAINTENANCE        | Details: MT0003
+2026-10-08 14:01:48 | Role: Accountant           | Action: LOGIN                  | Details: Logged in.
+2026-10-08 14:02:02 | Role: Accountant           | Action: UPDATE_PAYMENT         | Details: Set P0002 to Paid
+2026-10-08 14:02:23 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.
