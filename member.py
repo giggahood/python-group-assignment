@@ -130,10 +130,20 @@ def user_booking_menu(user_id):
 def user_member_menu(user_id):
     while True:
         print(f"\n===== User / Member Menu [{user_id}] =====")
-        print("1. View Available Spaces\n2. Request Booking or Extension\n3. View History\n0. Logout")
-        choice = input("Enter choice (0-3): ").strip()
+        print("1. View Available Spaces")
+        print("2. Request New Booking")
+        print("3. Extend an Existing Booking")  # <-- New Option
+        print("4. View History")
+        print("0. Logout")
+        choice = input("Enter choice (0-4): ").strip()
         
-        if choice == "1": user_view_available_spaces()
-        elif choice == "2": user_booking_menu(user_id)
-        elif choice == "3": user_view_history(user_id)
-        elif choice == "0": break
+        if choice == "1": 
+            user_view_available_spaces()
+        elif choice == "2": 
+            bc_make_booking()
+        elif choice == "3": 
+            user_extend_booking(user_id)      # <-- Calls teammate's new function
+        elif choice == "4": 
+            user_view_history(user_id)
+        elif choice == "0": 
+            break
