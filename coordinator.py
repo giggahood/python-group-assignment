@@ -71,8 +71,18 @@ def bc_make_booking():
                 print("  [Conflict Error] Time slot overlaps with existing booking.")
                 return
 
+   # 1. Calculate base rate
     rate = float(space[S_DAILY]) if btype == "Daily" else float(space[S_HOURLY]) * hours
-    total = rate + (rate * SERVICE_TAX_RATE)
+    
+    # 2. Apply discount if it's an Hourly booking meeting the minimum hours threshold
+    discount = 0.0
+    if btype == "Hourly" and hours >= LONG_BOOKING_HOURS:
+        discount = rate * LONG_BOOKING_DISCOUNT
+        print(f"  [Info] Applied {int(LONG_BOOKING_DISCOUNT * 100)}% discount for booking {LONG_BOOKING_HOURS} or more hours!")
+
+    # 3. Calculate final total with tax
+    subtotal = rate - discount
+    total = subtotal + (subtotal * SERVICE_TAX_RATE)
 
     b_id = generate_id(bookings, "B", 4)
     p_id = generate_id(payments, "P", 4)

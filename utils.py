@@ -174,9 +174,14 @@ def get_valid_date(prompt):
             
         try:
             chosen_date = datetime.datetime.strptime(value, "%Y-%m-%d").date()
+            max_date = today + datetime.timedelta(days=MAX_ADVANCE_DAYS)
+            
             if chosen_date < today:
                 print("  [Error] The date cannot be in the past.")
+            elif chosen_date > max_date:
+                print(f"  [Error] You can only book up to {MAX_ADVANCE_DAYS} days in advance.")
             else:
                 return chosen_date.strftime("%Y-%m-%d")
+                
         except ValueError:
-            print("  [Error] Invalid date format. Please use YYYY-MM-DD (e.g. 2026-10-05) or enter 0 to cancel.")
+            print("  [Error] Invalid date format. Please use YYYY-MM-DD...")

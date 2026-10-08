@@ -17,3 +17,5 @@
 2026-10-05 21:32:36 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.
 2026-10-05 23:25:49 | Role: Accountant           | Action: LOGIN                  | Details: Logged in.
 2026-10-05 23:26:05 | Role: Accountant           | Action: UPDATE_PAYMENT         | Details: Set P0001 to Paid
+2026-10-08 09:35:01 | Role: User/Member          | Action: EXTEND_BOOKING         | Details: B0005 extended by 10h
+2026-10-08 09:35:15 | Role: Hub Administrator    | Action: LOGIN                  | Details: Logged in.

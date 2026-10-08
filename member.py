@@ -115,18 +115,6 @@ def user_extend_booking(user_id):
         print(f"  [Success] Booking {booking_id} extended. New end time: {booking[B_END]}")
 
 
-def user_booking_menu(user_id):
-    """Ask whether to make a new booking or extend an existing one."""
-    print("\n1. Make New Booking\n2. Extend Existing Booking")
-    choice = input("Enter choice (1-2): ").strip()
-    if choice == "1":
-        bc_make_booking()
-    elif choice == "2":
-        user_extend_booking(user_id)
-    else:
-        print("  [Error] Invalid choice.")
-
-
 def user_member_menu(user_id):
     while True:
         print(f"\n===== User / Member Menu [{user_id}] =====")
